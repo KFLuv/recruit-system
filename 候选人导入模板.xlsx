@@ -1,0 +1,1 @@
+{"skill": "xlsx", "action": "create", "filename": "候选人导入模板.xlsx", "sheet": "候选人信息", "data": {"headers": ["姓名", "性别", "年龄", "手机号", "学历", "毕业院校", "专业", "应聘岗位", "邮箱"], "rows": [["张三", "男", 28, "13800138000", "本科", "北京大学", "计算机", "Java 开发", "zhangsan@test.com"]]}, "format": "xlsx"}

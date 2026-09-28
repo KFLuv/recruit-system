@@ -1,0 +1,38 @@
+// 飞书 Webhook 测试工具
+// 复制这个 JSON 到浏览器控制台测试 Webhook 是否有效
+
+const testFeishuWebhook = async () => {
+  const webhookUrl = '${FEISHU_WEBHOOK_URL:https://open.feishu.cn/open-apis/bot/v2/hook/<your-webhook-id>}';
+  
+  const data = {
+    msg_type: 'text',
+    content: {
+      text: '🚀 飞书测试消息 - 如果收到说明 Webhook 有效！'
+    }
+  };
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    console.log('飞书返回结果:', result);
+    
+    if (result.code === 0) {
+      console.log('✅ 消息发送成功！请检查飞书群是否收到消息');
+    } else {
+      console.log('❌ 发送失败:', result.msg);
+    }
+  } catch (error) {
+    console.error('请求失败:', error);
+  }
+};
+
+// 在浏览器控制台输入：testFeishuWebhook() 并回车测试
+console.log('飞书 Webhook 测试工具已加载');
+console.log('在控制台输入：testFeishuWebhook() 测试 Webhook');

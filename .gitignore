@@ -1,0 +1,13 @@
+target/
+*.jar
+*.log
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.db
+uploads/
+.idea/
+.vscode/
+.env
+*.env

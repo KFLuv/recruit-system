@@ -1,0 +1,67 @@
+server:
+  port: 8082
+  address: 0.0.0.0
+  servlet:
+    session:
+      cookie:
+        same-site: lax
+        http-only: false
+  
+spring:
+  application:
+    name: recruitment-system
+  
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/recruitment_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: <your-password>
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  # JPA 配置
+  jpa:
+    hibernate:
+      ddl-auto: update  # 自动同步表结构
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        hbm2ddl:
+          auto: update
+  
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  
+  # 静态资源访问
+  web:
+    resources:
+      static-locations: classpath:/static/,file:./uploads/
+
+# MyBatis Plus (可选，这里使用 JPA)
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 飞书配置
+feishu:
+  app:
+    id: ${FEISHU_APP_ID:}
+    secret: ${FEISHU_APP_SECRET:}
+  webhook:
+    url: ${FEISHU_WEBHOOK_URL:https://open.feishu.cn/open-apis/bot/v2/hook/<your-webhook-id>}
+  send:
+    enabled: true
+  default:
+    receive:
+      user: admin
+
+logging:
+  file:
+    path: E:/recruit/logs
+  level:
+    root: info

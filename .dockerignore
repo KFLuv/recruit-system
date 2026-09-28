@@ -1,0 +1,24 @@
+# 通用排除（构建不需要）
+.git
+.gitignore
+*.md
+*.bat
+*.ps1
+*.log
+.DS_Store
+.idea
+.vscode
+node_modules
+
+# 前端源码（构建时用现成 dist，不需要源码）
+frontend/src
+frontend/public
+
+# 后端源码（构建时用现成 jar，不需要源码）
+backend/src
+
+# 其他
+uploads
+_tmp_orig4
+test-feishu.html
+*.xlsx

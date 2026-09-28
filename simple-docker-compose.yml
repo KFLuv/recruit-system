@@ -1,0 +1,16 @@
+name: recruitment-simple
+
+services:
+  # 后端服务（带前端静态文件）
+  recruitment-app:
+    build:
+      context: .
+      dockerfile: simple.Dockerfile
+    container_name: recruitment-simple
+    ports:
+      - "8082:8082"
+    restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/recruitment_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: <your-password>
