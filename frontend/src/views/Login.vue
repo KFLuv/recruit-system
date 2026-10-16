@@ -5,7 +5,7 @@
       <div class="login-logo">
         <span class="login-logo-icon">📋</span>
       </div>
-      <h2 class="login-title">人力招聘全流程数字化归档管理系统</h2>
+      <h2 class="login-title">招聘管理系统</h2>
       <el-form
         ref="formRef"
         :model="loginForm"

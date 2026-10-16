@@ -1,4 +1,4 @@
-# 人力招聘全流程数字化归档管理系统 - Docker 部署指南
+# 招聘管理系统 - Docker 部署指南
 
 ## 一、快速启动（3 步完成）
 
@@ -11,7 +11,7 @@ docker-compose --version
 
 ### 步骤 2：进入项目目录
 ```powershell
-cd "E:\Desktop\人力招聘全流程数字化归档管理系统"
+cd "E:\Desktop\招聘管理系统"
 ```
 
 ### 步骤 3：一键启动
@@ -356,7 +356,7 @@ docker-compose up -d
 创建 `deploy.bat`：
 ```batch
 @echo off
-cd /d "E:\Desktop\人力招聘全流程数字化归档管理系统"
+cd /d "E:\Desktop\招聘管理系统"
 echo ========================================
 echo   正在启动招聘系统 Docker 容器...
 echo ========================================
@@ -372,7 +372,7 @@ pause
 创建 `backup.bat`：
 ```batch
 @echo off
-cd /d "E:\Desktop\人力招聘全流程数字化归档管理系统"
+cd /d "E:\Desktop\招聘管理系统"
 echo 正在备份数据库...
 docker run --rm \
   --volumes-from recruitment_mysql \
